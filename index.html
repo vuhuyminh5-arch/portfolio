@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Nguyễn Văn A</title>
+  <title>Portfolio | Vũ Huy Minh</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -17,528 +17,81 @@
       --border: rgba(108,99,255,0.2);
       --card: rgba(26,26,36,0.8);
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* NOISE OVERLAY */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0 2rem;
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 60px;
-    }
-
-    .logo {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
+    body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    nav { position: fixed; top: 0; width: 100%; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 60px; }
+    .logo { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--accent); text-decoration: none; letter-spacing: -0.5px; }
     .logo span { color: var(--accent2); }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav ul a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
     nav ul a:hover { color: var(--text); }
-
-    /* SECTIONS */
-    section {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 100px 2rem 60px;
-    }
-
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 80px;
-    }
-
+    section { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 100px 2rem 60px; }
+    #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
     .hero-content { max-width: 680px; }
-
-    .tag {
-      display: inline-block;
-      background: rgba(108,99,255,0.15);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 1.2rem;
-    }
-
+    .tag { display: inline-block; background: rgba(108,99,255,0.15); color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; border: 1px solid var(--border); margin-bottom: 1.5rem; }
+    h1 { font-family: 'Sora', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.2rem; }
     h1 .name { color: var(--accent); }
     h1 .role { color: var(--accent2); }
-
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 540px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-    }
-
+    .hero-desc { font-size: 1.1rem; color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; font-weight: 300; }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .btn {
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-    }
-
+    .btn { padding: 12px 28px; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: #8880ff; transform: translateY(-2px); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* GLOW BG */
-    .glow {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.15;
-    }
-
-    .glow-1 {
-      width: 500px;
-      height: 500px;
-      background: var(--accent);
-      top: 10%;
-      right: -100px;
-    }
-
-    .glow-2 {
-      width: 300px;
-      height: 300px;
-      background: var(--accent2);
-      bottom: 20%;
-      left: -50px;
-    }
-
-    /* SECTION TITLE */
+    .glow { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; opacity: 0.15; }
+    .glow-1 { width: 500px; height: 500px; background: var(--accent); top: 10%; right: -100px; }
+    .glow-2 { width: 300px; height: 300px; background: var(--accent2); bottom: 20%; left: -50px; }
     .section-header { margin-bottom: 3rem; }
-
-    .section-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -1px;
-      color: var(--text);
-    }
-
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 2px;
-      margin-top: 0.8rem;
-    }
-
-    /* ABOUT */
-    #about { background: var(--bg2); border-radius: 0; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .avatar-wrap {
-      position: relative;
-      width: 260px;
-      height: 260px;
-    }
-
-    .avatar-frame {
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      background: var(--bg3);
-      border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .avatar-badge {
-      position: absolute;
-      bottom: -12px;
-      right: -12px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 100px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 1.5rem;
-    }
-
-    .skill-tag {
-      background: rgba(108,99,255,0.12);
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 100px;
-      border: 1px solid rgba(108,99,255,0.25);
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.8rem;
-      transition: border-color 0.2s, transform 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(108,99,255,0.5);
-      transform: translateY(-4px);
-    }
-
+    .section-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -1px; color: var(--text); }
+    .divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; margin-top: 0.8rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
+    .avatar-wrap { position: relative; width: 260px; height: 260px; }
+    .avatar-frame { width: 100%; height: 100%; border-radius: 20px; background: var(--bg3); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 5rem; overflow: hidden; position: relative; }
+    .avatar-badge { position: absolute; bottom: -12px; right: -12px; background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 6px 12px; border-radius: 100px; letter-spacing: 1px; text-transform: uppercase; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+    .skill-tag { background: rgba(108,99,255,0.12); color: var(--accent); font-size: 0.82rem; font-weight: 600; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(108,99,255,0.25); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.8rem; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.2s; }
+    .project-card:hover { border-color: rgba(108,99,255,0.5); transform: translateY(-4px); }
     .project-card:hover::before { opacity: 1; }
-
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(108,99,255,0.15);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h3 {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 1.2rem;
-    }
-
-    .tech-tag {
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 100px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
+    .project-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(108,99,255,0.15); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .project-card h3 { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+    .project-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
+    .tech-tag { background: rgba(255,255,255,0.05); color: var(--muted); font-size: 0.75rem; padding: 4px 10px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.08); }
     .project-links { display: flex; gap: 0.8rem; }
-
-    .project-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: color 0.2s;
-    }
-
+    .project-link { color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
     .project-link:hover { color: #8880ff; }
-
-    /* CERTIFICATES */
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .cert-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      transition: border-color 0.2s;
-    }
-
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; display: flex; gap: 1rem; align-items: flex-start; transition: border-color 0.2s; }
     .cert-card:hover { border-color: rgba(108,99,255,0.5); }
-
-    .cert-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: rgba(255,101,132,0.12);
-      border: 1px solid rgba(255,101,132,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .cert-info h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 3px;
-    }
-
-    .cert-info p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .cert-year {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent2);
-      background: rgba(255,101,132,0.1);
-      padding: 2px 8px;
-      border-radius: 100px;
-      display: inline-block;
-    }
-
-    /* CONTACT */
-    #contact { background: var(--bg2); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-info h3 {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-
-    .contact-info p {
-      color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-    }
-
+    .cert-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,101,132,0.12); border: 1px solid rgba(255,101,132,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .cert-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .cert-info p { font-size: 0.82rem; color: var(--muted); margin-bottom: 6px; }
+    .cert-year { font-size: 0.75rem; font-weight: 600; color: var(--accent2); background: rgba(255,101,132,0.1); padding: 2px 8px; border-radius: 100px; display: inline-block; }
+    .cert-verify { display: inline-block; margin-top: 5px; font-size: 0.75rem; color: var(--accent); text-decoration: none; opacity: 0.8; }
+    .cert-verify:hover { opacity: 1; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: var(--text); }
+    .contact-info p { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
     .contact-items { display: flex; flex-direction: column; gap: 1rem; }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
+    .contact-item { display: flex; align-items: center; gap: 1rem; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
     .contact-item:hover { color: var(--accent); }
-
-    .contact-item-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(108,99,255,0.1);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
+    .contact-item-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(108,99,255,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
     .form-group { display: flex; flex-direction: column; gap: 6px; }
-
-    .form-group label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: var(--text);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-    }
-
-    /* FOOTER */
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; }
+    .form-group input, .form-group textarea { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; resize: vertical; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+    footer { position: relative; z-index: 1; text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
     footer span { color: var(--accent); }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; }
       .avatar-wrap { width: 200px; height: 200px; margin: 0 auto; }
@@ -546,17 +99,8 @@
       nav ul { gap: 1rem; }
       nav ul a { font-size: 0.8rem; }
     }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-content > * {
-      animation: fadeUp 0.6s ease both;
-    }
-
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-content > * { animation: fadeUp 0.6s ease both; }
     .hero-content .tag { animation-delay: 0.1s; }
     .hero-content h1 { animation-delay: 0.2s; }
     .hero-content .hero-desc { animation-delay: 0.3s; }
@@ -565,10 +109,9 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#hero" class="logo">dev<span>.</span>portfolio</a>
+    <a href="#hero" class="logo">vhm<span>.</span>dev</a>
     <ul>
       <li><a href="#about">Giới thiệu</a></li>
       <li><a href="#projects">Dự án</a></li>
@@ -587,12 +130,12 @@
       <div class="tag">✦ Sinh viên IT · HCMUE</div>
       <h1>
         Xin chào, tôi là<br>
-        <span class="name">Nguyễn Văn A</span><br>
+        <span class="name">Vũ Huy Minh</span><br>
         <span class="role">Web Developer</span>
       </h1>
       <p class="hero-desc">
-        Sinh viên Công nghệ Thông tin tại Đại học Sư phạm TP.HCM. 
-        Đam mê xây dựng ứng dụng web với ASP.NET Core, React và các công nghệ hiện đại.
+        Sinh viên Công nghệ Thông tin tại Đại học Sư phạm TP.HCM.
+        Đam mê xây dựng ứng dụng web và phát triển Low-code với các nền tảng hiện đại.
       </p>
       <div class="btn-group">
         <a href="#projects" class="btn btn-primary">Xem dự án</a>
@@ -613,36 +156,27 @@
     <div class="about-grid">
       <div>
         <div class="avatar-wrap">
-          <div class="avatar-frame">
-            👨‍💻
-          </div>
+          <div class="avatar-frame">👨‍💻</div>
           <div class="avatar-badge">IT Student</div>
         </div>
       </div>
       <div class="about-text">
-        <p>
-          Tôi là sinh viên năm 3 ngành Công nghệ Thông tin tại Khoa CNTT, Đại học Sư phạm TP.HCM (HCMUE). 
-          Tôi có niềm đam mê với lập trình web
-        </p>
-        <p>
-          Hiện tại tôi đang tập trung học ASP.NET Core MVC, C#, và thực hành qua các dự án thực tế 
-          như hệ thống thương mại điện tử, quản lý dữ liệu và tích hợp API.
-        </p>
-        <p>
-          Mục tiêu của tôi là trở thành một web Developer chuyên nghiệp, 
-          đóng góp cho cộng đồng công nghệ Việt Nam.
-        </p>
+        <p>Tôi là sinh viên ngành Công nghệ Thông tin tại Khoa CNTT, Đại học Sư phạm TP.HCM (HCMUE). Tôi có niềm đam mê với lập trình web và phát triển ứng dụng.</p>
+        <p>Hiện tại tôi đang thực hành qua các dự án thực tế bao gồm lập trình Windows, Cấu trúc dữ liệu, phân tích dữ liệu game, và các chứng chỉ về Cloud & AI từ Google, AWS và Mendix.</p>
+        <p>Mục tiêu của tôi là trở thành một Developer chuyên nghiệp, ứng dụng được cả Low-code lẫn Full-stack development trong các dự án thực tế.</p>
         <div class="skills-list">
           <span class="skill-tag">C#</span>
           <span class="skill-tag">ASP.NET Core</span>
           <span class="skill-tag">HTML/CSS</span>
           <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
           <span class="skill-tag">SQL Server</span>
-          <span class="skill-tag">Entity Framework</span>
-          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">Google Cloud</span>
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Mendix</span>
+          <span class="skill-tag">Generative AI</span>
           <span class="skill-tag">Git</span>
           <span class="skill-tag">Chart.js</span>
-          <span class="skill-tag">LaTeX</span>
         </div>
       </div>
     </div>
@@ -659,88 +193,45 @@
   <div class="projects-grid">
 
     <div class="project-card">
-      <div class="project-icon">🛒</div>
-      <h3>MyEStore</h3>
-      <p>
-        Ứng dụng thương mại điện tử xây dựng bằng ASP.NET Core MVC. 
-        Bao gồm quản lý sản phẩm, tìm kiếm, thống kê doanh số với biểu đồ Chart.js.
-      </p>
+      <div class="project-icon">🪟</div>
+      <h3>LTWINDOW11111</h3>
+      <p>Dự án lập trình Windows, xây dựng ứng dụng desktop với giao diện và tính năng thực tế.</p>
       <div class="tech-tags">
-        <span class="tech-tag">ASP.NET Core MVC</span>
+        <span class="tech-tag">Windows Programming</span>
         <span class="tech-tag">C#</span>
-        <span class="tech-tag">SQL Server</span>
+        <span class="tech-tag">.NET</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ttyan0111/LTWINDOW11111.git" class="project-link" target="_blank">⤻ GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🌳</div>
+      <h3>CTDL</h3>
+      <p>Bài tập và project về Cấu trúc Dữ liệu & Giải thuật — cài đặt các cấu trúc cơ bản và nâng cao.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Data Structures</span>
+        <span class="tech-tag">Algorithms</span>
+        <span class="tech-tag">C/C++</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ttyan0111/CTDL.git" class="project-link" target="_blank">⤻ GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-icon">🎮</div>
+      <h3>LoL Analytics</h3>
+      <p>Ứng dụng phân tích dữ liệu game League of Legends — thống kê, trực quan hóa dữ liệu người chơi.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Data Analytics</span>
+        <span class="tech-tag">Python</span>
         <span class="tech-tag">Chart.js</span>
-        <span class="tech-tag">Bootstrap</span>
+        <span class="tech-tag">API</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/username/MyEStore" class="project-link" target="_blank">
-          ⤻ GitHub
-        </a>
-        <a href="#" class="project-link">
-          ↗ Demo
-        </a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">📊</div>
-      <h3>Sales Dashboard</h3>
-      <p>
-        Module thống kê doanh số trong MyEStore, hiển thị doanh thu theo tháng, 
-        top sản phẩm bán chạy với biểu đồ tương tác.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">Chart.js</span>
-        <span class="tech-tag">LINQ</span>
-        <span class="tech-tag">Entity Framework</span>
-        <span class="tech-tag">JavaScript</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/username" class="project-link" target="_blank">
-          ⤻ GitHub
-        </a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">📄</div>
-      <h3>Thesis Template LaTeX</h3>
-      <p>
-        Template LaTeX dành cho khóa luận tốt nghiệp HCMUE với hỗ trợ tiếng Việt, 
-        biên dịch bằng XeLaTeX.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">LaTeX</span>
-        <span class="tech-tag">XeLaTeX</span>
-        <span class="tech-tag">Vietnamese</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/username" class="project-link" target="_blank">
-          ⤻ GitHub
-        </a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">🌐</div>
-      <h3>Portfolio Website</h3>
-      <p>
-        Trang portfolio cá nhân này — xây dựng bằng HTML, CSS, JavaScript thuần, 
-        triển khai trên GitHub Pages.
-      </p>
-      <div class="tech-tags">
-        <span class="tech-tag">HTML5</span>
-        <span class="tech-tag">CSS3</span>
-        <span class="tech-tag">JavaScript</span>
-        <span class="tech-tag">GitHub Pages</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/username/portfolio" class="project-link" target="_blank">
-          ⤻ GitHub
-        </a>
-        <a href="#" class="project-link">
-          ↗ Live
-        </a>
+        <a href="https://github.com/vuhuyminh5-arch/lol-analytics-12.git" class="project-link" target="_blank">⤻ GitHub</a>
       </div>
     </div>
 
@@ -758,56 +249,51 @@
     <div class="certs-grid">
 
       <div class="cert-card">
-        <div class="cert-icon">🎓</div>
+        <div class="cert-icon">☁️</div>
         <div class="cert-info">
-          <h4>C# Fundamentals</h4>
-          <p>Microsoft Learn / Coursera</p>
-          <span class="cert-year">2024</span>
+          <h4>Google Workspace User and Resource Management</h4>
+          <p>Google Cloud · Coursera</p>
+          <span class="cert-year">Apr 2026</span><br>
+          <a href="https://coursera.org/verify/1MDDR0HC9N5A" class="cert-verify" target="_blank">↗ Xác minh</a>
         </div>
       </div>
 
       <div class="cert-card">
-        <div class="cert-icon">🌐</div>
+        <div class="cert-icon">🤖</div>
         <div class="cert-info">
-          <h4>Web Development Bootcamp</h4>
-          <p>Udemy — HTML, CSS, JavaScript</p>
-          <span class="cert-year">2023</span>
+          <h4>Getting Started with AWS Generative AI for Developers</h4>
+          <p>Amazon Web Services · Coursera</p>
+          <span class="cert-year">Apr 2026</span><br>
+          <a href="https://coursera.org/verify/JJ9YZSP3BIX1" class="cert-verify" target="_blank">↗ Xác minh</a>
         </div>
       </div>
 
       <div class="cert-card">
-        <div class="cert-icon">🗄️</div>
+        <div class="cert-icon">✍️</div>
         <div class="cert-info">
-          <h4>SQL Server for Beginners</h4>
-          <p>Microsoft Learn</p>
-          <span class="cert-year">2023</span>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-icon">📱</div>
-        <div class="cert-info">
-          <h4>Git & GitHub Essentials</h4>
-          <p>GitHub Learning Lab</p>
-          <span class="cert-year">2023</span>
+          <h4>Start Writing Prompts like a Pro</h4>
+          <p>Google · Coursera</p>
+          <span class="cert-year">Apr 2026</span><br>
+          <a href="https://coursera.org/verify/V9MYCHI1MEGV" class="cert-verify" target="_blank">↗ Xác minh</a>
         </div>
       </div>
 
       <div class="cert-card">
         <div class="cert-icon">🧠</div>
         <div class="cert-info">
-          <h4>Introduction to Cloud Computing</h4>
-          <p>IBM / Coursera</p>
-          <span class="cert-year">2024</span>
+          <h4>Introduction to AI</h4>
+          <p>Google · Coursera</p>
+          <span class="cert-year">Apr 2026</span><br>
+          <a href="https://coursera.org/verify/XU7KCU4BDEMY" class="cert-verify" target="_blank">↗ Xác minh</a>
         </div>
       </div>
 
       <div class="cert-card">
-        <div class="cert-icon">🔐</div>
+        <div class="cert-icon">⚡</div>
         <div class="cert-info">
-          <h4>Cybersecurity Basics</h4>
-          <p>Cisco Networking Academy</p>
-          <span class="cert-year">2024</span>
+          <h4>Mendix Rapid Developer Certification</h4>
+          <p>Mendix · Certificate #108764</p>
+          <span class="cert-year">Apr 2026</span>
         </div>
       </div>
 
@@ -826,26 +312,19 @@
     <div class="contact-grid">
       <div class="contact-info">
         <h3>Hãy kết nối với tôi!</h3>
-        <p>
-          Tôi luôn sẵn sàng thảo luận về các cơ hội thực tập, 
-          hợp tác dự án hoặc đơn giản là trò chuyện về công nghệ.
-        </p>
+        <p>Tôi luôn sẵn sàng thảo luận về các cơ hội thực tập, hợp tác dự án hoặc đơn giản là trò chuyện về công nghệ.</p>
         <div class="contact-items">
-          <a href="mailto:email@example.com" class="contact-item">
+          <a href="mailto:vuhuyminh5@gmail.com" class="contact-item">
             <div class="contact-item-icon">✉</div>
-            email@example.com
+            vuhuyminh5@gmail.com
           </a>
-          <a href="https://github.com/username" class="contact-item" target="_blank">
+          <a href="https://github.com/vuhuyminh5-arch" class="contact-item" target="_blank">
             <div class="contact-item-icon">⌘</div>
-            github.com/username
+            github.com/vuhuyminh5-arch
           </a>
-          <a href="https://linkedin.com/in/username" class="contact-item" target="_blank">
+          <a href="https://www.linkedin.com/in/huyminh-" class="contact-item" target="_blank">
             <div class="contact-item-icon">in</div>
-            linkedin.com/in/username
-          </a>
-          <a href="tel:+84xxxxxxxxx" class="contact-item">
-            <div class="contact-item-icon">☎</div>
-            +84 xxx xxx xxx
+            linkedin.com/in/huyminh-
           </a>
         </div>
       </div>
@@ -853,7 +332,7 @@
         <div class="contact-form">
           <div class="form-group">
             <label>Họ và tên</label>
-            <input type="text" placeholder="Nguyễn Văn B" />
+            <input type="text" placeholder="Nguyễn Văn A" />
           </div>
           <div class="form-group">
             <label>Email</label>
@@ -863,52 +342,33 @@
             <label>Tin nhắn</label>
             <textarea rows="4" placeholder="Nội dung tin nhắn..."></textarea>
           </div>
-          <button class="btn btn-primary" onclick="alert('Cảm ơn bạn đã liên hệ!')">
-            Gửi tin nhắn →
-          </button>
+          <button class="btn btn-primary" onclick="alert('Cảm ơn bạn đã liên hệ!')">Gửi tin nhắn →</button>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>Vũ Huy </span> · Được xây dựng với ♥ và GitHub Pages</p>
+  <p>© 2026 <span>Vũ Huy Minh</span> · Built with ♥ in TP.HCM</p>
 </footer>
 
 <script>
-  // Smooth active nav
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav ul a');
-
   window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? '#f0f0f5' : '';
-    });
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.getAttribute('id'); });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? '#f0f0f5' : ''; });
   });
-
-  // Intersection Observer for fade-in cards
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.project-card, .cert-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.2s';
-    observer.observe(el);
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
+    el.style.transition='opacity 0.5s ease, transform 0.5s ease, border-color 0.2s';
+    obs.observe(el);
   });
 </script>
-
 </body>
 </html>
