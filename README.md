@@ -12,7 +12,7 @@
 
 | Hero | Dự án | Chứng chỉ |
 |------|-------|-----------|
-| ![Hero](screenshots/hero.png) | ![Projects](screenshots/projects.png) | ![Certificates](screenshots/certificates.png) |
+| ![Hero](screenshots/0.jpg) | ![Projects](screenshots/1.jpg) | ![Certificates](screenshots/2.jpg) |
 
 ---
 
@@ -140,7 +140,7 @@ Sinh viên Công nghệ Thông tin — Khoa CNTT
 
 - 📧 Email: [vuhuyminh5@gmail.com](mailto:vuhuyminh5@gmail.com)
 - 💻 GitHub: [github.com/vuhuyminh5-arch](https://github.com/vuhuyminh5-arch)
-- 🔗 LinkedIn: [linkedin.com/in/huyminh-](https://www.linkedin.com/in/huyminh-)
+- 🔗 LinkedIn: [linkedin.com/in/huyminh-](https://www.linkedin.com/in/huyminh-it)
 
 ---
 
